@@ -19,8 +19,9 @@ public class Principal extends javax.swing.JFrame {
     
     public Principal() {
         initComponents();
+        setLocationRelativeTo(null);
         pantallaRegistro = new  PantallaRegistro();
-        pantallaConsulta = new PantallaConsulta();
+        pantallaConsulta = new PantallaConsulta(); 
         add (pantallaRegistro);
         add (pantallaConsulta);
     }
@@ -88,11 +89,11 @@ public class Principal extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 602, Short.MAX_VALUE)
+            .addGap(0, 520, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 299, Short.MAX_VALUE)
+            .addGap(0, 365, Short.MAX_VALUE)
         );
 
         pack();
