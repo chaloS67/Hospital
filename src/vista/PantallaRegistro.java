@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package sistemahospital;
+package vista;
 
 
 
@@ -35,7 +35,7 @@ public class PantallaRegistro extends javax.swing.JInternalFrame {
         initComponents();
         
        
-        try {
+       /* try {
            
             Class.forName("com.mysql.jdbc.Driver"); // SE FIJA SI ESTA LA LIBRERIA CORRESPONDIENTE
           
@@ -85,7 +85,7 @@ public class PantallaRegistro extends javax.swing.JInternalFrame {
         jLabel1 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
 
-        java.util.ResourceBundle bundle = java.util.ResourceBundle.getBundle("sistemahospital/Bundle"); // NOI18N
+        java.util.ResourceBundle bundle = java.util.ResourceBundle.getBundle("vista/Bundle"); // NOI18N
         jTextField1.setText(bundle.getString("PantallaRegistro.jTextField1.text")); // NOI18N
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -214,15 +214,15 @@ public class PantallaRegistro extends javax.swing.JInternalFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup Grupo1;
-    private com.toedter.calendar.JDateChooser dcFechaNac;
-    private javax.swing.JButton jButton1;
+    public com.toedter.calendar.JDateChooser dcFechaNac;
+    public javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollBar jScrollBar1;
     private javax.swing.JTextField jTextField1;
-    private javax.swing.JRadioButton rbFemenino;
-    private javax.swing.JRadioButton rbMasculino;
-    private javax.swing.JTextField tfApellido;
-    private javax.swing.JTextField tfDocumento;
-    private javax.swing.JTextField tfNombre;
+    public javax.swing.JRadioButton rbFemenino;
+    public javax.swing.JRadioButton rbMasculino;
+    public javax.swing.JTextField tfApellido;
+    public javax.swing.JTextField tfDocumento;
+    public javax.swing.JTextField tfNombre;
     // End of variables declaration//GEN-END:variables
 }

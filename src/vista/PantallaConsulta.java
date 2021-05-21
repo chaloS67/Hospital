@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package sistemahospital;
+package vista;
 
 
 import java.sql.Statement;
@@ -34,7 +34,7 @@ public class PantallaConsulta extends javax.swing.JInternalFrame {
         initComponents();
         
         
-       
+       /*
         try {
            
             Class.forName("com.mysql.jdbc.Driver"); // SE FIJA SI ESTA LA LIBRERIA CORRESPONDIENTE
@@ -42,7 +42,7 @@ public class PantallaConsulta extends javax.swing.JInternalFrame {
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(PantallaRegistro.class.getName()).log(Level.SEVERE, null, ex);
             
-        }
+        }*/
     }
 
     /**
@@ -63,7 +63,7 @@ public class PantallaConsulta extends javax.swing.JInternalFrame {
         jtPacientes = new javax.swing.JTable();
         jbBuscar = new javax.swing.JButton();
 
-        java.util.ResourceBundle bundle = java.util.ResourceBundle.getBundle("sistemahospital/Bundle"); // NOI18N
+        java.util.ResourceBundle bundle = java.util.ResourceBundle.getBundle("vista/Bundle"); // NOI18N
         jLabel1.setText(bundle.getString("PantallaConsulta.jLabel1.text")); // NOI18N
 
         jLabel2.setText(bundle.getString("PantallaConsulta.jLabel2.text")); // NOI18N
@@ -165,7 +165,7 @@ public class PantallaConsulta extends javax.swing.JInternalFrame {
 
     private void jbBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbBuscarActionPerformed
         
-        
+      /*  
         DefaultTableModel modelo = (DefaultTableModel) jtPacientes.getModel();// crea la tabla en la variable Jtabla
         modelo.setColumnCount(5); 
         modelo.setRowCount(0); // LIMPIA LAS FILAS PARA LA PROXIMA BSQUEDA
@@ -219,7 +219,7 @@ public class PantallaConsulta extends javax.swing.JInternalFrame {
             JOptionPane.showMessageDialog(null, "no se puede conectar a la base de datos");
         }
        
-       
+       */
     }//GEN-LAST:event_jbBuscarActionPerformed
 
 
@@ -228,9 +228,9 @@ public class PantallaConsulta extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JButton jbBuscar;
+    public javax.swing.JButton jbBuscar;
     private javax.swing.JTable jtPacientes;
-    private javax.swing.JTextField tfApellidoBusqueda;
-    private javax.swing.JTextField tfDocumentoBusqueda;
+    public javax.swing.JTextField tfApellidoBusqueda;
+    public javax.swing.JTextField tfDocumentoBusqueda;
     // End of variables declaration//GEN-END:variables
 }
