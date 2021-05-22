@@ -6,8 +6,7 @@
 package vista;
 
 import controlador.Controlador;
-import vista.PantallaRegistro;
-import vista.PantallaConsulta;
+
 
 /**
  *
@@ -45,11 +44,11 @@ public class Principal extends javax.swing.JFrame {
         jMenuItem1 = new javax.swing.JMenuItem();
         jMenuItem4 = new javax.swing.JMenuItem();
         jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu1 = new javax.swing.JMenu();
+        jMenuArchivo = new javax.swing.JMenu();
         jMenuItem2 = new javax.swing.JMenuItem();
-        jMenu2 = new javax.swing.JMenu();
-        jMenuItem3 = new javax.swing.JMenuItem();
-        jMenuItem5 = new javax.swing.JMenuItem();
+        jMenuPaciente = new javax.swing.JMenu();
+        jMenuRegistrar = new javax.swing.JMenuItem();
+        jMenuConsulta = new javax.swing.JMenuItem();
 
         java.util.ResourceBundle bundle = java.util.ResourceBundle.getBundle("vista/Bundle"); // NOI18N
         jMenuItem1.setText(bundle.getString("Principal.jMenuItem1.text")); // NOI18N
@@ -58,7 +57,7 @@ public class Principal extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jMenu1.setText(bundle.getString("Principal.jMenu1.text")); // NOI18N
+        jMenuArchivo.setText(bundle.getString("Principal.jMenuArchivo.text")); // NOI18N
 
         jMenuItem2.setText(bundle.getString("Principal.jMenuItem2.text")); // NOI18N
         jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
@@ -66,29 +65,29 @@ public class Principal extends javax.swing.JFrame {
                 jMenuItem2ActionPerformed(evt);
             }
         });
-        jMenu1.add(jMenuItem2);
+        jMenuArchivo.add(jMenuItem2);
 
-        jMenuBar1.add(jMenu1);
+        jMenuBar1.add(jMenuArchivo);
 
-        jMenu2.setText(bundle.getString("Principal.jMenu2.text")); // NOI18N
+        jMenuPaciente.setText(bundle.getString("Principal.jMenuPaciente.text")); // NOI18N
 
-        jMenuItem3.setText(bundle.getString("Principal.jMenuItem3.text")); // NOI18N
-        jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
+        jMenuRegistrar.setText(bundle.getString("Principal.jMenuRegistrar.text")); // NOI18N
+        jMenuRegistrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem3ActionPerformed(evt);
+                jMenuRegistrarActionPerformed(evt);
             }
         });
-        jMenu2.add(jMenuItem3);
+        jMenuPaciente.add(jMenuRegistrar);
 
-        jMenuItem5.setText(bundle.getString("Principal.jMenuItem5.text")); // NOI18N
-        jMenuItem5.addActionListener(new java.awt.event.ActionListener() {
+        jMenuConsulta.setText(bundle.getString("Principal.jMenuConsulta.text")); // NOI18N
+        jMenuConsulta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem5ActionPerformed(evt);
+                jMenuConsultaActionPerformed(evt);
             }
         });
-        jMenu2.add(jMenuItem5);
+        jMenuPaciente.add(jMenuConsulta);
 
-        jMenuBar1.add(jMenu2);
+        jMenuBar1.add(jMenuPaciente);
 
         setJMenuBar(jMenuBar1);
 
@@ -114,27 +113,27 @@ public class Principal extends javax.swing.JFrame {
         
     }//GEN-LAST:event_jMenuItem2ActionPerformed
 
-    private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
+    private void jMenuConsultaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuConsultaActionPerformed
         pantallaRegistro.setVisible(false);
         pantallaConsulta.setVisible(true);
                                            
-    }//GEN-LAST:event_jMenuItem5ActionPerformed
+    }//GEN-LAST:event_jMenuConsultaActionPerformed
 
-    private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
+    private void jMenuRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuRegistrarActionPerformed
        pantallaConsulta.setVisible(false);
        pantallaRegistro.setVisible(true);
-    }//GEN-LAST:event_jMenuItem3ActionPerformed
+    }//GEN-LAST:event_jMenuRegistrarActionPerformed
 
   
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JMenu jMenu1;
-    public javax.swing.JMenu jMenu2;
+    private javax.swing.JMenu jMenuArchivo;
     private javax.swing.JMenuBar jMenuBar1;
+    public javax.swing.JMenuItem jMenuConsulta;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
-    public javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
-    public javax.swing.JMenuItem jMenuItem5;
+    public javax.swing.JMenu jMenuPaciente;
+    public javax.swing.JMenuItem jMenuRegistrar;
     // End of variables declaration//GEN-END:variables
 }

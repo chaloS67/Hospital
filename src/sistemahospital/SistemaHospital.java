@@ -6,9 +6,12 @@
 package sistemahospital;
 
 import controlador.Controlador;
-import modelo.Modelo;
+import modelo.ConsultaPaciente;
+import modelo.Paciente;
+import vista.PantallaConsulta;
+import vista.PantallaRegistro;
 import vista.Principal;
-import modelo.Conexion;
+
 
 /**
  *
@@ -22,12 +25,14 @@ public class SistemaHospital {
     public static void main(String[] args) {
        
        
-       Modelo miModelo = new Modelo();
+       Paciente miModelo = new Paciente();
        Principal miPrincipal = new Principal(); 
-       Controlador miControlador = new Controlador(miPrincipal,miModelo);
-       miPrincipal.setControlador(miControlador);
-       miModelo.setControlador(miControlador);
-       miModelo.getCon();
+       PantallaRegistro miReg = new PantallaRegistro();
+       PantallaConsulta miPantallaConsulta = new PantallaConsulta();
+       ConsultaPaciente miConsul = new ConsultaPaciente();
+       Controlador ctrl = new Controlador(miModelo,miConsul,miPrincipal,miPantallaConsulta,miReg);
+       ctrl.iniciar();
+     
       
        miPrincipal.setVisible(true);
         

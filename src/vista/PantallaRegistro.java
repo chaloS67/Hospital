@@ -83,7 +83,7 @@ public class PantallaRegistro extends javax.swing.JInternalFrame {
         rbFemenino = new javax.swing.JRadioButton();
         dcFechaNac = new com.toedter.calendar.JDateChooser();
         jLabel1 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        jbRegistrar = new javax.swing.JButton();
 
         java.util.ResourceBundle bundle = java.util.ResourceBundle.getBundle("vista/Bundle"); // NOI18N
         jTextField1.setText(bundle.getString("PantallaRegistro.jTextField1.text")); // NOI18N
@@ -111,10 +111,10 @@ public class PantallaRegistro extends javax.swing.JInternalFrame {
 
         jLabel1.setText(bundle.getString("PantallaRegistro.jLabel1.text")); // NOI18N
 
-        jButton1.setText(bundle.getString("PantallaRegistro.jButton1.text")); // NOI18N
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        jbRegistrar.setText(bundle.getString("PantallaRegistro.jbRegistrar.text")); // NOI18N
+        jbRegistrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                jbRegistrarActionPerformed(evt);
             }
         });
 
@@ -141,7 +141,7 @@ public class PantallaRegistro extends javax.swing.JInternalFrame {
                                 .addComponent(dcFechaNac, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(109, 109, 109)
-                        .addComponent(jButton1)))
+                        .addComponent(jbRegistrar)))
                 .addContainerGap(117, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -164,7 +164,7 @@ public class PantallaRegistro extends javax.swing.JInternalFrame {
                     .addComponent(rbMasculino)
                     .addComponent(rbFemenino))
                 .addGap(17, 17, 17)
-                .addComponent(jButton1)
+                .addComponent(jbRegistrar)
                 .addContainerGap())
         );
 
@@ -175,9 +175,9 @@ public class PantallaRegistro extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField1ActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void jbRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbRegistrarActionPerformed
         
-        int year,month,day;
+      /* int year,month,day;
         
         year = dcFechaNac.getCalendar().get(Calendar.YEAR);
         month = dcFechaNac.getCalendar().get(Calendar.MONTH);
@@ -204,9 +204,9 @@ public class PantallaRegistro extends javax.swing.JInternalFrame {
             
             Logger.getLogger(PantallaRegistro.class.getName()).log(Level.SEVERE, null, ex);
             JOptionPane.showMessageDialog(null, "no se puede conectar a la base de datos");
-        }
-    }//GEN-LAST:event_jButton1ActionPerformed
-
+        }*/
+    }//GEN-LAST:event_jbRegistrarActionPerformed
+    
     private void rbMasculinoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbMasculinoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_rbMasculinoActionPerformed
@@ -215,10 +215,10 @@ public class PantallaRegistro extends javax.swing.JInternalFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup Grupo1;
     public com.toedter.calendar.JDateChooser dcFechaNac;
-    public javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollBar jScrollBar1;
     private javax.swing.JTextField jTextField1;
+    public javax.swing.JButton jbRegistrar;
     public javax.swing.JRadioButton rbFemenino;
     public javax.swing.JRadioButton rbMasculino;
     public javax.swing.JTextField tfApellido;

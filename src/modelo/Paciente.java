@@ -5,27 +5,41 @@
  */
 package modelo;
 
-import com.sun.jdi.connect.spi.Connection;
-import controlador.Controlador;
-import modelo.Conexion;
+import java.sql.Connection;
+import controlador.*;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import vista.PantallaRegistro;
+
 /**
  *
  * @author gonza
  */
-public class Modelo {
+public class Paciente {
 
    
-    Conexion con = new Conexion();
-    Controlador controlador;
-    String nombre;
-    String apellido;
-    String documento;
-    char sexo;
-    String fechaNac;
     
-     public void setControlador(Controlador controlador) {
-        this.controlador = controlador;
+    private String nombre;
+    private String apellido;
+    private String documento;
+    private String sexo;
+    private String fechaNac;
+    
+    
+    
+    public Paciente(){
+    
+        nombre = " ";
+        apellido= " ";
+        documento= " ";
+        sexo = " ";
+        fechaNac = " ";
+
     }
+    
+     
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
@@ -39,7 +53,7 @@ public class Modelo {
         this.documento = documento;
     }
 
-    public void setSexo(char sexo) {
+    public void setSexo(String sexo) {
         this.sexo = sexo;
     }
 
@@ -60,27 +74,13 @@ public class Modelo {
         return documento;
     }
 
-    public char getSexo() {
+    public String getSexo() {
         return sexo;
     }
 
     public String getFechaNac() {
         return fechaNac;
     }
-
-    public Conexion getCon() {
-        return con;
-    }
-
-    public Controlador getControlador() {
-        return controlador;
-    }
     
-    
-    public Modelo(){
-       
-        
-    }
-    
-    
+   
 }

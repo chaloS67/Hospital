@@ -22,14 +22,20 @@ public class Conexion {
     public final String url = "jdbc:mysql://localhost/SistemaHospital";
     public final String user = "root";
     public final String pass = "";
+    Connection miConexion = null;   
     
     
-    public Connection Conectar(){
+    public Conexion(){
         
-        Connection link = null;
+    }
+    
+    
+    public Connection dameConexion(){
+        
+       
     
         try {
-            link = DriverManager.getConnection(this.url,this.user,this.pass);
+           miConexion = DriverManager.getConnection(this.url,this.user,this.pass);
             
         } catch (SQLException ex) {
             Logger.getLogger(Conexion.class.getName()).log(Level.SEVERE, null, ex);
@@ -37,7 +43,7 @@ public class Conexion {
             
         }
         
-         return (link);
+         return (miConexion);
         
     }
    
