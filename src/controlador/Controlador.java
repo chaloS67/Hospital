@@ -63,7 +63,7 @@ public class Controlador implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         
         if(e.getSource() == pReg.jbRegistrar){
-           
+           // sisisisissi
             int  year = visReg.dcFechaNac.getCalendar().get(Calendar.YEAR);
             int  month = visReg.dcFechaNac.getCalendar().get(Calendar.MONTH);
             int  day = visReg.dcFechaNac.getCalendar().get(Calendar.DAY_OF_MONTH); 
