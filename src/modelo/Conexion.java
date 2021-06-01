@@ -19,6 +19,7 @@ import javax.swing.JOptionPane;
  */
 public class Conexion {
     
+    public final String driver ="com.mysql.cj.jdbc.Driver";
     public final String url = "jdbc:mysql://localhost/SistemaHospital";
     public final String user = "root";
     public final String pass = "";
@@ -27,24 +28,22 @@ public class Conexion {
     
     public Conexion(){
         
-    }
-    
-    
-    public Connection dameConexion(){
-        
-       
-    
         try {
+            Class.forName(driver);
            miConexion = DriverManager.getConnection(this.url,this.user,this.pass);
+           if (miConexion != null){
+               JOptionPane.showInternalMessageDialog(null, "Conexion establecida");
+           }
             
-        } catch (SQLException ex) {
+        } catch (SQLException  | ClassNotFoundException ex) {
             Logger.getLogger(Conexion.class.getName()).log(Level.SEVERE, null, ex);
             JOptionPane.showMessageDialog(null, "no se puede conectar a la base de datos");
-            
         }
+    }
+    
+    public Connection getConnection(){
         
-         return (miConexion);
-        
+        return miConexion;
     }
    
 }

@@ -17,17 +17,11 @@ public class Principal extends javax.swing.JFrame {
     /**
      * Creates new form Principal
      */
-    Controlador controlador;
-    PantallaRegistro pantallaRegistro;
-    PantallaConsulta pantallaConsulta;
+   
     
     public Principal() {
         initComponents();
-        setLocationRelativeTo(null);
-        pantallaRegistro = new  PantallaRegistro();
-        pantallaConsulta = new PantallaConsulta(); 
-        add (pantallaRegistro);
-        add (pantallaConsulta);
+       
     }
     
     
@@ -105,23 +99,18 @@ public class Principal extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    public void setControlador(Controlador controlador) {
-        this.controlador = controlador;
-    }
-
+   
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
         
     }//GEN-LAST:event_jMenuItem2ActionPerformed
 
     private void jMenuConsultaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuConsultaActionPerformed
-        pantallaRegistro.setVisible(false);
-        pantallaConsulta.setVisible(true);
+       
                                            
     }//GEN-LAST:event_jMenuConsultaActionPerformed
 
     private void jMenuRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuRegistrarActionPerformed
-       pantallaConsulta.setVisible(false);
-       pantallaRegistro.setVisible(true);
+    
     }//GEN-LAST:event_jMenuRegistrarActionPerformed
 
   

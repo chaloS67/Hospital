@@ -7,8 +7,6 @@ package modelo;
 import java.sql.PreparedStatement;
 import java.sql.Connection;
 import java.sql.SQLException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 /**
@@ -17,19 +15,22 @@ import javax.swing.JOptionPane;
  */
 public class ConsultaPaciente extends Conexion {
     
-    public boolean Registrar(Paciente pro){
-        JOptionPane.showConfirmDialog(null, "ingreso a registro");
+    public boolean Registrar(Paciente pac){
+        
+        
         PreparedStatement stmt = null;
-        Connection con = dameConexion();
-        String sql = "INSERT INTO pacientes(documento,nombre,apellido,fechaNacimiento,sexo)"
-        + "VALUES (?,?,?,?,?)";
+        Connection con = getConnection();
+        String sql = "INSERT INTO pacientes (documento,nombre,apellido,fechaNacimiento,sexo)"
+        +"VALUES (?,?,?,?,?)";
+     
         try{
             stmt = con.prepareStatement(sql);
-            stmt.setNString(1, pro.getDocumento());
-            stmt.setString(2, pro.getNombre());
-            stmt.setString(3, pro.getApellido());
-            stmt.setString(4,pro.getFechaNac());
-            stmt.setString(5, pro.getSexo());
+            stmt.setString(1, pac.getDocumento());
+            stmt.setString(2, pac.getNombre());
+            stmt.setString(3, pac.getApellido());
+            stmt.setString(4, pac.getFechaNac());
+            stmt.setString(5, pac.getSexo());
+            stmt.executeUpdate();
             return true;
           
         }catch (SQLException e){

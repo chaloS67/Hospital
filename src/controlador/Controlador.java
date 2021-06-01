@@ -32,60 +32,87 @@ public class Controlador implements ActionListener {
     private PantallaConsulta pCon;
     private PantallaRegistro visReg;
     private PantallaConsulta visCons;
+    
 
-    public Controlador(Paciente pac,ConsultaPaciente modC,Principal visP,PantallaConsulta pCon,
-            PantallaRegistro pReg) {
+    public Controlador(Paciente pac,ConsultaPaciente modC,Principal visP,PantallaConsulta visCon,
+            PantallaRegistro visReg ) {
         
         this.pac = pac;
         this.modC= modC;
         this.visP = visP;
-        this.pCon = pCon;
-        this.pReg = pReg;
+        this.visReg = visReg;
+        this.visCons = visCon;
         this.visP.jMenuConsulta.addActionListener(this);
         this.visP.jMenuPaciente.addActionListener(this);
         this.visP.jMenuRegistrar.addActionListener(this);
-//        this.visReg.jbRegistrar.addActionListener(this);
-//       this.visCons.jbBuscar.addActionListener(this);
+        this.visReg.jbRegistrar.addActionListener(this);
+        this.visCons.jbBuscar.addActionListener(this);
+        
         
     }  
     
     public void iniciar (){
 
         visP.setTitle("Sistema de registro hospital");
-        visP.setLocationRelativeTo(null);
-        
-
-
+        visP.setLocationRelativeTo(null); 
+        visP.add (visReg);
+        visP.add (visCons);
+        visReg.setVisible(false);
+        visCons.setVisible(false);
+       
     }
     
     
     @Override
     public void actionPerformed(ActionEvent e) {
+     
+       //JOptionPane.showInternalMessageDialog(null, "ingreso");
+       
+       Object control = e.getSource();
+       if (control.equals(visP.jMenuRegistrar) ) { // entra al menu Registrar
+            
+                      
+           JOptionPane.showInternalMessageDialog(null, "ingreso a botn primero menu ");
+           visReg.setVisible(true);
+            
         
-        if(e.getSource() == pReg.jbRegistrar){
-           // sisisisissi
-            int  year = visReg.dcFechaNac.getCalendar().get(Calendar.YEAR);
-            int  month = visReg.dcFechaNac.getCalendar().get(Calendar.MONTH);
-            int  day = visReg.dcFechaNac.getCalendar().get(Calendar.DAY_OF_MONTH); 
+        }if (control.equals(visReg.jbRegistrar)){ // entra a registrar
+            
+            
+            //JOptionPane.showInternalMessageDialog(null, "Apreto el boton guardar");
+            
+            // Obtengo los datos del Jcalendar para mandarlos como string
+            String  year = Integer.toString(visReg.dcFechaNac.getCalendar().get(Calendar.YEAR));
+            String  month = Integer.toString(visReg.dcFechaNac.getCalendar().get(Calendar.MONTH));
+            String  day = Integer.toString(visReg.dcFechaNac.getCalendar().get(Calendar.DAY_OF_MONTH)); 
             String fecha = ""+year+"-"+""+month+"-"+""+day+"";
-
+           
+            //Segun sea el radioButtom seleccionado manda el string correspondiente
+            char sexo;
+             if (visReg.rbFemenino.isSelected()){
+                sexo = 'F';
+            }if (visReg.rbMasculino.isSelected()){
+                sexo = 'M';
+            }
+            
+            //Ingresa los datos en el objeto paciente
+            pac.setFechaNac(fecha);
             pac.setDocumento(visReg.tfDocumento.getText());
             pac.setNombre(visReg.tfNombre.getText());
             pac.setApellido(visReg.tfApellido.getText());
-            pac.setFechaNac(fecha);
+           
+            // Manda al nuevo paciente para su registro a la base de datos
             
-            if (modC.Registrar(pac) == true){
-                JOptionPane.showInternalMessageDialog(null, "Se ingreso correctamente");
-            }else{
-            
-                JOptionPane.showInternalMessageDialog(null, "no ingreso archivo");
+            if (modC.Registrar(pac)){
+                JOptionPane.showInternalMessageDialog(null, "Se guardo registro");
+           
             }
+            
+        
         }
         
         
     }
     
-    
-    
-    
-}
+  }
+   

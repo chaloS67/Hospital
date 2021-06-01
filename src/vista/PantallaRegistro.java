@@ -29,7 +29,7 @@ public class PantallaRegistro extends javax.swing.JInternalFrame {
     /**
      * Creates new form PrincipalRegistro
      */
-    Connection con;
+   
     public PantallaRegistro() {
         
         initComponents();
@@ -107,6 +107,7 @@ public class PantallaRegistro extends javax.swing.JInternalFrame {
             }
         });
 
+        Grupo1.add(rbFemenino);
         rbFemenino.setText(bundle.getString("PantallaRegistro.rbFemenino.text")); // NOI18N
 
         jLabel1.setText(bundle.getString("PantallaRegistro.jLabel1.text")); // NOI18N
@@ -177,34 +178,7 @@ public class PantallaRegistro extends javax.swing.JInternalFrame {
 
     private void jbRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbRegistrarActionPerformed
         
-      /* int year,month,day;
-        
-        year = dcFechaNac.getCalendar().get(Calendar.YEAR);
-        month = dcFechaNac.getCalendar().get(Calendar.MONTH);
-        day = dcFechaNac.getCalendar().get(Calendar.DAY_OF_MONTH);
-        
-        String fecha = ""+year+"-"+""+month+"-"+""+day+"";
-       
-        String sexo = "";
-        
-        if (rbMasculino.isSelected()){
-            sexo = "M";
-        }if (rbFemenino.isSelected()){
-            sexo = "F";
-        }
-        
-        
-        try {
-            
-            con = DriverManager.getConnection("jdbc:mysql://localhost/SistemaHospital","root","");
-            Statement stmt = con.createStatement(); //CREA OBJETO DE BD PARA CONSULTAS
-            stmt.executeUpdate("INSERT INTO pacientes VALUES('"+tfDocumento.getText()+"','"+tfNombre.getText()+" ','"+tfApellido.getText()+"','"+fecha+"','"+sexo+"')");
-       
-        } catch (SQLException ex) {
-            
-            Logger.getLogger(PantallaRegistro.class.getName()).log(Level.SEVERE, null, ex);
-            JOptionPane.showMessageDialog(null, "no se puede conectar a la base de datos");
-        }*/
+    
     }//GEN-LAST:event_jbRegistrarActionPerformed
     
     private void rbMasculinoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbMasculinoActionPerformed

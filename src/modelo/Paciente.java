@@ -31,11 +31,11 @@ public class Paciente {
     
     public Paciente(){
     
-        nombre = " ";
-        apellido= " ";
-        documento= " ";
-        sexo = " ";
-        fechaNac = " ";
+        nombre = "";
+        apellido= "";
+        documento= "";
+        sexo = "";
+        fechaNac = "";
 
     }
     
